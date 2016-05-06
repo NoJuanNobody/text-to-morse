@@ -1,7 +1,7 @@
 
 
 var message={};
-message.msg = "this is a test";
+
 message.morse = "";
 message.rosetta= {
     'a': '.-',    'b': '-...',  'c': '-.-.', 'd': '-..',
@@ -23,12 +23,31 @@ message.toMorse=function(){
           return self.rosetta[e.toLowerCase()];
       })
       .join(" ");
-      // console.log(morseMsg);
+      console.log(morseMsg);
       return morseMsg;
 
   }
+window.onload = function(){
+  message.msg = prompt("what would you like to convert to morse?");
 
-var morseCode = message.toMorse();
+  var display = document.getElementById("display").innerHTML = message.toMorse();
+}
 
-var theMessage = document.getElementById("inputfield").innerHTML;
-console.log(theMessage);
+
+var updateCursor = function(){
+
+  var heading = document.getElementById("heading").innerHTML;
+  headArr = heading.split("");
+  if(blink){
+    headArr.push("|");
+  }else{
+    headArr.pop();
+  }
+
+
+  document.getElementById("heading").innerHTML = headArr.join("");
+  blink = !blink;
+}
+// updateCursor();
+var blink = true;
+setInterval(updateCursor, 700);

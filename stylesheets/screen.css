@@ -66,3 +66,13 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
+
+/* line 7, ../sass/screen.scss */
+body {
+  background-color: #F7CA18;
+  font-family: 'Oswald', sans-serif;
+}
+/* line 10, ../sass/screen.scss */
+body h1 {
+  font-size: 100px;
+}
